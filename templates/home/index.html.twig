@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <!-- Top content -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/images/teamwill-logo.png"  height="60" alt="">
+            </a>
+        </div>
+    </nav>
+    <header class="masthead" style=" background-image:  linear-gradient(170deg, rgba(255,255,255,0.8074580173866421) 23%, rgba(255,255,255,0) 31%),  url('/assets/images/Background.png')">
+
+        <div class="container ">
+            <div class="row ">
+                <div class="col-sm-7 row align-items-end my-5 ">
+                    <div class="description my-5">
+                        <p class="medium-paragraph my-5">
+                            Efficom vous accompagne où que vous soyez!
+                            Solution disponible en version web et mobile.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-5 c-form-1-box ">
+
+
+                    <div class="c-form-1-bottom">
+                        <div class="mb-3">
+                            <h6 class="teamwill-title">Complétez le formulaire pour obtenir un RDV
+                                pour une démo gratuite ici ! </h6>
+                        </div>
+
+                        {{ form_start(form, {'novalidate': 'novalidate', 'attr': {'class': 'needs-validation'}}) }}
+
+                        <div class="form-group">
+                                <label class="sr-only" for="c-form-1-name">Prénom & nom</label>
+                                {{ form_widget(form.fullName) }}
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                                <div class="invalid-feedback">
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="c-form-1-email">Adresse mail professionnelle </label>
+                                {{ form_widget(form.email) }}
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="c-form-1-subject">N° de téléphone </label>
+                                {{ form_widget(form.phone) }}
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="c-form-1-subject">Entreprise</label>
+                                {{ form_widget(form.company) }}
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="c-form-1-subject">Fonction</label>
+                                {{ form_widget(form.role) }}
+
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="c-form-1-subject">Date de RDV souhaité </label>
+                                {{ form_widget(form.dateRDV) }}
+
+                            </div>
+                            <button type="submit" class="btn mt-2">Envoyer</button>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="top-content  "></div>
+
+    <!-- End content -->
+{% endblock %}
