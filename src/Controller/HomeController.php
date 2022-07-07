@@ -26,6 +26,8 @@ class HomeController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $doctrine->getManager();
+            $customer->setDateRDV(new \DateTime($request->get('dateRDV')));
+            $customer->setCreatedAt(new \DateTimeImmutable('now'));
             $entityManager->persist($customer);
             $entityManager->flush();
 
@@ -49,13 +51,26 @@ class HomeController extends AbstractController
             }catch (Exception $exception){
                 //dump($exception);
             }
+            try {
+                $emailRec = (new Email())
+                    ->from($this->getParameter('app.senderEMAIL'))
+                    ->to($customer->getEmail())
+                    ->subject('Demander une démo gratuite')
+                    ->html($this->renderView('email/emailReceiver.html.twig', [
+                            'receiver'=>$customer->getFullName(),
+                        ]
+                    ));
+                $mailer->send($emailRec);
+            }catch (Exception $exception){
+                //dump($exception);
+            }
 
             $this->addFlash('success', 'Votre inscription a bien été prise en compte !');
             return $this->redirectToRoute('app_home');
 
         }
         return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
+            'controller_name' => 'Nouveauté Efficom VO',
             'form'=>$form->createView()
         ]);
     }

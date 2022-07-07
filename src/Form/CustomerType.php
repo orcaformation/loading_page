@@ -36,23 +36,14 @@ class CustomerType extends AbstractType
             ])
             ->add('role',ChoiceType::class,[
                 'required'   => true,
-                'placeholder' => 'Merci de selectionner votre fonction',
+                'placeholder' => 'Merci de sélectionner votre fonction',
                 'choices'  => [
                     'Directeur' => 'Directeur',
-                    'Chef de Ventes' => 'Chef de Ventes',
+                    'Chef de ventes' => 'Chef de Ventes',
                     'Administrateur' => 'Administrateur',
                     'Autres' => 'Autres',
                 ],
                 'attr' => ['class' => 'form-select form-control c-form-1-subject'],
-            ])
-            ->add('dateRDV',DateType::class,[
-                'widget' => 'single_text',
-                'attr' => [
-                    'class' => 'c-form-1-name form-control',
-                    'placeholder' => 'JJ/MM/AAAA',
-                ],
-                'required' => true,
-
             ])
         ;
     }
@@ -61,7 +52,8 @@ class CustomerType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Customer::class,
-            'csrf_protection' => false,
+            'validation_groups' => ['registration'],
+
         ]);
     }
 }

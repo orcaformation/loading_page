@@ -4,9 +4,9 @@
 
 $primary: #2484FF;
 $secondary: #FB5607;
-$success: #3A86FF;
+$success: #a8f0c6;
 $info: #FF006E;
-$light: #8338EC;
+$light: #a8f0c6;
 
 /***** Top content *****/
 
@@ -107,6 +107,7 @@ $light: #8338EC;
 .c-form-1-box input[type="email"],
 .c-form-1-box input[type="date"],
 .c-form-1-box input[type="number"],
+.c-form-1-box input[type="datetime-local"],
 .c-form-1-box textarea,
 .c-form-1-box select,
 .c-form-1-box textarea.form-control {
@@ -142,6 +143,7 @@ $light: #8338EC;
 .c-form-1-box input[type="number"]:focus,
 .c-form-1-box input[type="email"]:focus,
 .c-form-1-box input[type="date"]:focus,
+.c-form-1-box input[type="datetime-local"]:focus,
 .c-form-1-box textarea:focus,
 .c-form-1-box select:focus,
 .c-form-1-box textarea.form-control:focus {
