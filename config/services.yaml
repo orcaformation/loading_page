@@ -6,7 +6,8 @@
 parameters:
     app.senderEMAIL: '%env(SENDER_EMAIL_ADDRESS)%'
     app.principalEMAIL: '%env(PRINCIPAL_EMAIL_ADDRESS)%'
-    app.secondaryEMAIL: '%env(SECONDARY_EMAIL_ADDRESS)%'
+    app.carbonCOPYEMAIL: '%env(json:RECIPIENTS_CARBON_COPY)%'
+
 
 services:
     # default configuration for services in *this* file

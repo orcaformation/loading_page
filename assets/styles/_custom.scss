@@ -8,6 +8,10 @@ $success: #a8f0c6;
 $info: #FF006E;
 $light: #a8f0c6;
 
+bady {
+  background-color: #0a0a0a;
+}
+
 /***** Top content *****/
 
 .full-screen{
@@ -230,7 +234,8 @@ header.masthead{
   background-attachment: scroll;
   position: relative;
   background-size: cover;
-  max-height: 50vh;
+  max-height: 50vh!important;
+  height: 50vh!important;
   padding: 20vh 0 0 0 ;
 }
 /* Chrome, Safari, Edge, Opera */

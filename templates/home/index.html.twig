@@ -12,10 +12,9 @@
         </div>
     </nav>
     <header class="masthead" style=" background-image:  linear-gradient(170deg, rgba(255,255,255,0.8074580173866421) 23%, rgba(255,255,255,0) 31%),  url('/assets/images/Background.png')">
-
         <div class="container ">
             <div class="row ">
-                <div class="col-sm-7 row align-items-end my-5 ">
+                <div class="col-sm-6 row align-items-end my-5 ">
                     <div class="description my-5">
                         <p class="medium-paragraph my-5">
                             Efficom vous accompagne où que vous soyez!
@@ -23,10 +22,7 @@
                         </p>
                     </div>
                 </div>
-
-                <div class="col-sm-5 c-form-1-box ">
-
-
+                <div class="col-sm-6 c-form-1-box  my-5">
                     <div class="c-form-1-bottom">
                         <div class="mb-3">
                             <h6 class="teamwill-title">Complétez le formulaire pour obtenir un RDV
@@ -37,9 +33,7 @@
                                 {{ message }}
                             </div>
                         {% endfor %}
-
                         {{ form_start(form, {'novalidate': 'novalidate', 'attr': {'class': 'needs-validation'}}) }}
-
                         <div class="form-group">
                                 <label class="sr-only" for="c-form-1-name">Prénom & nom</label>
                                 {{ form_widget(form.fullName) }}
@@ -59,10 +53,9 @@
                             <div class="form-group">
                                 <label class="sr-only" for="c-form-1-subject">Fonction</label>
                                 {{ form_widget(form.role) }}
-
                             </div>
                             <div class="form-group">
-                                <label class="sr-only" for="c-form-1-subject">Date de RDV souhaitée </label>
+                                <label class="sr-only" for="c-form-1-subject">Date et heure de RDV souhaitées </label>
                                 <input type="datetime-local" required name="dateRDV" class="c-form-1-subject form-control">
                             </div>
                             <button type="submit" class="btn mt-2">Envoyer</button>
@@ -73,6 +66,5 @@
         </div>
     </header>
     <div class="top-content  "></div>
-
     <!-- End content -->
 {% endblock %}

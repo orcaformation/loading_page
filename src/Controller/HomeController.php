@@ -30,12 +30,13 @@ class HomeController extends AbstractController
             $customer->setCreatedAt(new \DateTimeImmutable('now'));
             $entityManager->persist($customer);
             $entityManager->flush();
-
+            $cc = $this->getParameter('app.carbonCOPYEMAIL');
             try {
                 $email = (new Email())
                     ->from($this->getParameter('app.senderEMAIL'))
                     ->to($this->getParameter('app.principalEMAIL'))
-                    ->addCc($this->getParameter('app.secondaryEMAIL'))
+                    ->addCc(...$cc)
+                    //->addCc(array())
                     ->subject('Demander une démo gratuite')
                     ->html($this->renderView('email/email.html.twig', [
                             'sender'=>$customer->getFullName(),
